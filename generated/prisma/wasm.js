@@ -117,7 +117,35 @@ exports.Prisma.UserScalarFieldEnum = {
   id: 'id',
   name: 'name',
   password: 'password',
-  username: 'username'
+  username: 'username',
+  roleId: 'roleId'
+};
+
+exports.Prisma.RoleScalarFieldEnum = {
+  id: 'id',
+  name: 'name'
+};
+
+exports.Prisma.IncomeScalarFieldEnum = {
+  id: 'id',
+  date: 'date',
+  price: 'price',
+  quantity: 'quantity',
+  total: 'total',
+  reportId: 'reportId'
+};
+
+exports.Prisma.OutcomeScalarFieldEnum = {
+  id: 'id',
+  date: 'date',
+  price: 'price',
+  quantity: 'quantity',
+  total: 'total',
+  reportId: 'reportId'
+};
+
+exports.Prisma.ReportScalarFieldEnum = {
+  id: 'id'
 };
 
 exports.Prisma.SortOrder = {
@@ -132,7 +160,11 @@ exports.Prisma.QueryMode = {
 
 
 exports.Prisma.ModelName = {
-  user: 'user'
+  user: 'user',
+  role: 'role',
+  income: 'income',
+  outcome: 'outcome',
+  report: 'report'
 };
 
 /**
