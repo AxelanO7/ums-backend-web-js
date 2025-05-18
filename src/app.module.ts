@@ -7,6 +7,8 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import databaseConfig, { CONFIG_DATABASE } from './config/database.config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { UserModule } from './user/user.module';
+import { OutcomeModule } from './outcome/outcome.module';
+import { PrismaModule } from './prisma/prisma.module';
 import { UserModule } from './user/user.module';
 
 @Module({
@@ -27,6 +29,8 @@ import { UserModule } from './user/user.module';
     }),
     IncomeModule,
     UserModule,
+    PrismaModule,
+    OutcomeModule,
   ],
   controllers: [AppController],
   providers: [AppService, IncomeService],
