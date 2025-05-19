@@ -9,7 +9,6 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { UserModule } from './user/user.module';
 import { OutcomeModule } from './outcome/outcome.module';
 import { PrismaModule } from './prisma/prisma.module';
-import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
