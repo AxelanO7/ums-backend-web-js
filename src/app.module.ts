@@ -9,6 +9,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { UserModule } from './user/user.module';
 import { OutcomeModule } from './outcome/outcome.module';
 import { PrismaModule } from './prisma/prisma.module';
+import { DashboardModule } from './dashboard/dashboard.module';
 
 @Module({
   imports: [
@@ -30,8 +31,9 @@ import { PrismaModule } from './prisma/prisma.module';
     UserModule,
     PrismaModule,
     OutcomeModule,
+    DashboardModule,
   ],
   controllers: [AppController],
-  providers: [AppService, IncomeService],
+  providers: [AppService],
 })
 export class AppModule {}

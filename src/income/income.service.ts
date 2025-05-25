@@ -15,7 +15,6 @@ export class IncomeService {
   }
 
   findAll() {
-    console.log(this.prisma);
     return this.prisma.income.findMany();
   }
 
