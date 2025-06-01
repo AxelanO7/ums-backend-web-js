@@ -2,5 +2,5 @@ onlyBuiltDependencies:
   - '@nestjs/core'
   - '@prisma/client'
   - '@prisma/engines'
-  - esbuild
+  - '@swc/core'
   - prisma
