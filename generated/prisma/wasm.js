@@ -117,13 +117,7 @@ exports.Prisma.UserScalarFieldEnum = {
   id: 'id',
   name: 'name',
   password: 'password',
-  username: 'username',
-  roleId: 'roleId'
-};
-
-exports.Prisma.RoleScalarFieldEnum = {
-  id: 'id',
-  name: 'name'
+  username: 'username'
 };
 
 exports.Prisma.IncomeScalarFieldEnum = {
@@ -161,7 +155,6 @@ exports.Prisma.QueryMode = {
 
 exports.Prisma.ModelName = {
   user: 'user',
-  role: 'role',
   income: 'income',
   outcome: 'outcome',
   report: 'report'

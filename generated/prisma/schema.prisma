@@ -13,15 +13,15 @@ model user {
   name     String
   password String
   username String
-  role     role   @relation(fields: [roleId], references: [id])
-  roleId   String @db.ObjectId
+  // role     role   @relation(fields: [roleId], references: [id])
+  // roleId   String @db.ObjectId
 }
 
-model role {
-  id   String @id @default(auto()) @map("_id") @db.ObjectId
-  name String
-  user user[]
-}
+// model role {
+//   id   String @id @default(auto()) @map("_id") @db.ObjectId
+//   name String
+//   user user[]
+// }
 
 model income {
   id       String  @id @default(auto()) @map("_id") @db.ObjectId
