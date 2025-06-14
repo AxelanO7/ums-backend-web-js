@@ -171,6 +171,7 @@ const config = {
     "db"
   ],
   "activeProvider": "mongodb",
+  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
@@ -179,8 +180,8 @@ const config = {
       }
     }
   },
-  "inlineSchema": "generator client {\n  provider = \"prisma-client-js\"\n  output   = \"../generated/prisma\"\n}\n\ndatasource db {\n  provider = \"mongodb\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel user {\n  id       String @id @default(auto()) @map(\"_id\") @db.ObjectId\n  name     String\n  password String\n  username String\n  // role     role   @relation(fields: [roleId], references: [id])\n  // roleId   String @db.ObjectId\n}\n\n// model role {\n//   id   String @id @default(auto()) @map(\"_id\") @db.ObjectId\n//   name String\n//   user user[]\n// }\n\nmodel income {\n  id       String  @id @default(auto()) @map(\"_id\") @db.ObjectId\n  date     String\n  price    Float\n  quantity Float\n  total    Float\n  report   report? @relation(fields: [reportId], references: [id])\n  reportId String? @db.ObjectId\n}\n\nmodel outcome {\n  id       String  @id @default(auto()) @map(\"_id\") @db.ObjectId\n  date     String\n  price    Float\n  quantity Float\n  total    Float\n  report   report? @relation(fields: [reportId], references: [id])\n  reportId String? @db.ObjectId\n}\n\nmodel report {\n  id       String    @id @default(auto()) @map(\"_id\") @db.ObjectId\n  incomes  income[]\n  outcomes outcome[]\n}\n",
-  "inlineSchemaHash": "07eb089dc9543cd840b35439f1dd4d28fa2939a26ed95828a5d28f57b1cb9b6b",
+  "inlineSchema": "generator client {\n  provider = \"prisma-client-js\"\n  output   = \"../generated/prisma\"\n}\n\ndatasource db {\n  provider = \"mongodb\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel user {\n  id       String @id @default(auto()) @map(\"_id\") @db.ObjectId\n  name     String\n  password String\n  username String\n}\n\nmodel income {\n  id       String  @id @default(auto()) @map(\"_id\") @db.ObjectId\n  date     String\n  price    Float\n  quantity Float\n  total    Float\n  report   report? @relation(fields: [reportId], references: [id])\n  reportId String? @db.ObjectId\n}\n\nmodel outcome {\n  id       String  @id @default(auto()) @map(\"_id\") @db.ObjectId\n  date     String\n  price    Float\n  quantity Float\n  total    Float\n  report   report? @relation(fields: [reportId], references: [id])\n  reportId String? @db.ObjectId\n}\n\nmodel report {\n  id       String    @id @default(auto()) @map(\"_id\") @db.ObjectId\n  incomes  income[]\n  outcomes outcome[]\n}\n",
+  "inlineSchemaHash": "c962b8436a6ea38d764c4e0b6930d2e078059e868f195e5fa72567c2154d65b9",
   "copyEngine": true
 }
 
