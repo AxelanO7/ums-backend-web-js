@@ -29,11 +29,12 @@ import { DashboardModule } from './dashboard/dashboard.module';
     }),
     IncomeModule,
     UserModule,
-    PrismaModule,
     OutcomeModule,
     DashboardModule,
+    PrismaModule,
   ],
   controllers: [AppController],
   providers: [AppService],
+  exports: [PrismaModule],
 })
 export class AppModule {}
