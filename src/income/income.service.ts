@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { CreateIncomeDto } from './dto/create-income.dto';
 import { UpdateIncomeDto } from './dto/update-income.dto';
 import { PrismaService } from 'src/prisma/prisma.service';
-import { PrismaClient } from '@prisma/client';
+import { Prisma } from '@prisma/client';
 
 @Injectable()
 export class IncomeService {

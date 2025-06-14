@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { CreateOutcomeDto } from './dto/create-outcome.dto';
 import { UpdateOutcomeDto } from './dto/update-outcome.dto';
 import { PrismaService } from 'src/prisma/prisma.service';
-import { PrismaClient } from '@prisma/client';
+import { Prisma } from '@prisma/client';
 
 @Injectable()
 export class OutcomeService {
