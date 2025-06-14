@@ -1,7 +1,4 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { IncomeService } from './income/income.service';
 import { IncomeModule } from './income/income.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import databaseConfig, { CONFIG_DATABASE } from './config/database.config';
@@ -33,8 +30,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
     DashboardModule,
     PrismaModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
   exports: [PrismaModule],
 })
 export class AppModule {}
