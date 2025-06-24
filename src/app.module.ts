@@ -7,6 +7,7 @@ import { UserModule } from './user/user.module';
 import { OutcomeModule } from './outcome/outcome.module';
 import { PrismaModule } from './prisma/prisma.module';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { ReportModule } from './report/report.module';
 
 @Module({
   imports: [
@@ -29,6 +30,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
     OutcomeModule,
     DashboardModule,
     PrismaModule,
+    ReportModule,
   ],
   controllers: [],
   exports: [PrismaModule],
