@@ -20,6 +20,7 @@ model income {
   date     String
   price    Float
   quantity Float
+  unit     String
   total    Float
   report   report? @relation(fields: [reportId], references: [id])
   reportId String? @db.ObjectId
@@ -31,6 +32,7 @@ model outcome {
   date     String
   price    Float
   quantity Float
+  unit     String
   total    Float
   report   report? @relation(fields: [reportId], references: [id])
   reportId String? @db.ObjectId
