@@ -9,8 +9,8 @@ export class IncomeService {
   constructor(private readonly prisma: PrismaService) {}
 
   create(createIncomeDto: CreateIncomeDto) {
-    return this.prisma.user.create({
-      data: createIncomeDto as Prisma.userCreateInput,
+    return this.prisma.income.create({
+      data: createIncomeDto as Prisma.incomeCreateInput,
     });
   }
 
