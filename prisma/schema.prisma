@@ -15,31 +15,21 @@ model user {
 }
 
 model income {
-  id       String  @id @default(auto()) @map("_id") @db.ObjectId
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
   name     String
   date     String
   price    Float
   quantity Float
   unit     String
   total    Float
-  report   report? @relation(fields: [reportId], references: [id])
-  reportId String? @db.ObjectId
 }
 
 model outcome {
-  id       String  @id @default(auto()) @map("_id") @db.ObjectId
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
   name     String
   date     String
   price    Float
   quantity Float
   unit     String
   total    Float
-  report   report? @relation(fields: [reportId], references: [id])
-  reportId String? @db.ObjectId
-}
-
-model report {
-  id       String    @id @default(auto()) @map("_id") @db.ObjectId
-  incomes  income[]
-  outcomes outcome[]
 }
