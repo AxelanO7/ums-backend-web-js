@@ -5,21 +5,23 @@ import { PrismaService } from 'src/prisma/prisma.service';
 export class DashboardService {
   constructor(private readonly prisma: PrismaService) {}
 
-  findAll() {
+  async findAll() {
     const total = {
       totalIncome: 0,
       totalOutcome: 0,
       totalBalance: 0,
     };
 
-    this.prisma.income.findMany().then((incomes) => {
+    await this.prisma.income.findMany().then((incomes) => {
+      console.log('incomes', incomes);
       total.totalIncome = incomes.reduce(
         (acc, income) => acc + income.total,
         0,
       );
     });
 
-    this.prisma.outcome.findMany().then((outcomes) => {
+    await this.prisma.outcome.findMany().then((outcomes) => {
+      console.log('outcomes', outcomes);
       total.totalOutcome = outcomes.reduce(
         (acc, outcome) => acc + outcome.total,
         0,
@@ -28,6 +30,7 @@ export class DashboardService {
 
     total.totalBalance = total.totalIncome - total.totalOutcome;
 
+    console.log('total', total);
     return total;
   }
 }
