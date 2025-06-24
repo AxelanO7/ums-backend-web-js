@@ -13,7 +13,6 @@ export class DashboardService {
     };
 
     await this.prisma.income.findMany().then((incomes) => {
-      console.log('incomes', incomes);
       total.totalIncome = incomes.reduce(
         (acc, income) => acc + income.total,
         0,
@@ -21,7 +20,6 @@ export class DashboardService {
     });
 
     await this.prisma.outcome.findMany().then((outcomes) => {
-      console.log('outcomes', outcomes);
       total.totalOutcome = outcomes.reduce(
         (acc, outcome) => acc + outcome.total,
         0,
@@ -29,8 +27,6 @@ export class DashboardService {
     });
 
     total.totalBalance = total.totalIncome - total.totalOutcome;
-
-    console.log('total', total);
     return total;
   }
 }
